@@ -1,11 +1,11 @@
 package com.introToSpringContext.components;
 
-import org.springframework.context.annotation.Primary;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary
-public class MarioGame implements GamingConsole {
+@Qualifier("contraGameQualifier")
+public class ContraGame implements GamingConsole {
 	@Override
 	public void up() {
 		// TODO Auto-generated method stub
@@ -15,13 +15,13 @@ public class MarioGame implements GamingConsole {
 	@Override
 	public void down() {
 		// TODO Auto-generated method stub
-		System.out.println("Enter pipe");
+		System.out.println("Duck");
 	}
 
 	@Override
 	public void left() {
 		// TODO Auto-generated method stub
-		System.out.println("Go backwards");
+		System.out.println("Shoot");
 	}
 
 	@Override

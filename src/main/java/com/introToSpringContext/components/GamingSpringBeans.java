@@ -2,6 +2,7 @@ package com.introToSpringContext.components;
 
 import java.util.Arrays;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 public class GamingSpringBeans {
 
 	@Bean
-	public GameRunner gameRunner(GamingConsole game) {
+	public GameRunner gameRunner(@Qualifier("contraGameQualifier") GamingConsole game) { // QUALIFIER FOR CONTRA GAME
 		var gameRunner = new GameRunner(game);
 		return gameRunner;
 	}
@@ -25,6 +26,7 @@ public class GamingSpringBeans {
 			) {
 			
 			Arrays.stream(context.getBeanDefinitionNames()).forEach(e -> System.out.println(e));
+			context.getBean(GameRunner.class).run();
 		}
 	}
 
