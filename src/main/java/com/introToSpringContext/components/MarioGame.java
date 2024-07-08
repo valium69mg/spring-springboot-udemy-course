@@ -1,7 +1,9 @@
-package gameWithBeans;
+package com.introToSpringContext.components;
 
-public class ContraGame implements Game {
+import org.springframework.stereotype.Component;
 
+@Component
+public class MarioGame implements GamingConsole {
 	@Override
 	public void up() {
 		// TODO Auto-generated method stub
@@ -11,19 +13,19 @@ public class ContraGame implements Game {
 	@Override
 	public void down() {
 		// TODO Auto-generated method stub
-		System.out.println("Duck");
+		System.out.println("Enter pipe");
 	}
 
 	@Override
 	public void left() {
 		// TODO Auto-generated method stub
-		System.out.println("Shoot");
+		System.out.println("Go backwards");
 	}
 
 	@Override
 	public void right() {
 		// TODO Auto-generated method stub
 		System.out.println("Go forward");
-	}
 
+	}
 }
