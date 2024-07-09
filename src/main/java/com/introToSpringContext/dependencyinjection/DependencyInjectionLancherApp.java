@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 // 3 TYPES OF DEP IN SPRING
 
-// construtor-based 
+// fill injection
 @Component
 class YourBusinessClass {
 	
@@ -51,7 +51,7 @@ class YourBusinessClass2 {
 	
 }
 
-// fill injection
+// construtor-based 
 @Component
 class YourBusinessClass3 {
 	Dependency1 dependency1;
